@@ -59,7 +59,7 @@
       100% { transform: scale(1); filter: hue-rotate(0deg); }
     }
 
-    /* CAPA 1: POLVO ESTELAR Y MICRO ESTRELLAS */
+    /* CAPAS DE ESTRELLAS TITILANTES */
     .stars-layer-1 {
       position: fixed;
       top: 0;
@@ -83,7 +83,6 @@
       pointer-events: none;
     }
 
-    /* CAPA 2: ESTRELLAS MEDIANAS DENSAS */
     .stars-layer-2 {
       position: fixed;
       top: 0;
@@ -106,7 +105,6 @@
       pointer-events: none;
     }
 
-    /* CAPA 3: ESTRELLAS GRANDES TITILANTES */
     .stars-layer-3 {
       position: fixed;
       top: 0;
@@ -128,7 +126,6 @@
       pointer-events: none;
     }
 
-    /* CAPA 4: ESTRELLAS GIGANTES CON HALO DE LUZ */
     .stars-layer-4 {
       position: fixed;
       top: 0;
@@ -171,7 +168,7 @@
       100% { opacity: 0.5; filter: drop-shadow(0 0 4px #7cd4fd); }
     }
 
-    /* === 6 ESTRELLAS FUGACES === */
+    /* === ESTRELLAS FUGACES === */
     .shooting-star-container {
       position: fixed;
       top: 0;
@@ -193,47 +190,12 @@
       transform: rotate(-35deg);
     }
 
-    .star-1 {
-      top: 10%;
-      left: 65%;
-      width: 140px;
-      animation: shoot1 6s ease-in-out infinite;
-    }
-
-    .star-2 {
-      top: 28%;
-      left: 85%;
-      width: 180px;
-      animation: shoot2 8s ease-in-out 2s infinite;
-    }
-
-    .star-3 {
-      top: 5%;
-      left: 35%;
-      width: 130px;
-      animation: shoot3 7s ease-in-out 4s infinite;
-    }
-
-    .star-4 {
-      top: 45%;
-      left: 75%;
-      width: 160px;
-      animation: shoot4 9s ease-in-out 1.5s infinite;
-    }
-
-    .star-5 {
-      top: 20%;
-      left: 50%;
-      width: 150px;
-      animation: shoot1 7.5s ease-in-out 3.5s infinite;
-    }
-
-    .star-6 {
-      top: 55%;
-      left: 90%;
-      width: 170px;
-      animation: shoot2 10s ease-in-out 5.5s infinite;
-    }
+    .star-1 { top: 10%; left: 65%; width: 140px; animation: shoot1 6s ease-in-out infinite; }
+    .star-2 { top: 28%; left: 85%; width: 180px; animation: shoot2 8s ease-in-out 2s infinite; }
+    .star-3 { top: 5%; left: 35%; width: 130px; animation: shoot3 7s ease-in-out 4s infinite; }
+    .star-4 { top: 45%; left: 75%; width: 160px; animation: shoot4 9s ease-in-out 1.5s infinite; }
+    .star-5 { top: 20%; left: 50%; width: 150px; animation: shoot1 7.5s ease-in-out 3.5s infinite; }
+    .star-6 { top: 55%; left: 90%; width: 170px; animation: shoot2 10s ease-in-out 5.5s infinite; }
 
     @keyframes shoot1 {
       0% { transform: translateX(0) translateY(0) rotate(-35deg); opacity: 0; }
@@ -451,7 +413,7 @@
 
     .wish-title {
       font-family: 'Cinzel', serif;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       font-weight: 700;
       color: var(--gold-light);
       margin-bottom: 8px;
@@ -461,7 +423,7 @@
       font-size: 0.88rem;
       color: var(--text-muted);
       margin-bottom: 18px;
-      min-height: 42px;
+      min-height: 48px;
     }
 
     .wish-amount {
@@ -639,7 +601,7 @@
 </head>
 <body>
 
-  <!-- 4 CAPAS DENSAS DE ESTRELLAS -->
+  <!-- 4 CAPAS DE ESTRELLAS -->
   <div class="galaxy-bg"></div>
   <div class="stars-layer-1"></div>
   <div class="stars-layer-2"></div>
@@ -658,7 +620,7 @@
 
   <div class="container">
     
-    <!-- PORTADA Y TÍTULOS -->
+    <!-- TARJETA PRINCIPAL CON PORTADA Y TÍTULOS -->
     <div class="hero-card">
       <img src="portada.jpg" alt="Víctor & Priscilla" class="banner-img" onerror="this.style.display='none'">
 
@@ -682,7 +644,7 @@
       </div>
     </div>
 
-    <!-- SECCIÓN: SUBIR FOTOS Y VIDEOS (GOOGLE FORMS) -->
+    <!-- SECCIÓN: SUBIR FOTOS Y VIDEOS -->
     <div class="photo-section">
       <div class="photo-icon">🐉 📸 🌌</div>
       <h2 class="photo-title">Álbum Digital de Recuerdos</h2>
@@ -699,87 +661,310 @@
     <p class="section-subtitle">Si deseas hacernos un presente, puedes ayudarnos a cumplir una de estas misiones y aventuras.</p>
 
     <div class="grid-wishes">
-      <!-- Deseo 1 -->
-      <div class="wish-card">
-        <div>
-          <div class="wish-icon">☕</div>
-          <h3 class="wish-title">Recarga de Energía</h3>
-          <p class="wish-desc">Para un desayuno y café reparador en nuestro primer amanecer de casados.</p>
-        </div>
-        <div>
-          <div class="wish-amount">$15.000</div>
-          <button class="btn-regalar" onclick="openModal('Recarga de Energía (Desayuno)', '$15.000')">Regalar Deseo</button>
-        </div>
-      </div>
 
-      <!-- Deseo 2 -->
-      <div class="wish-card">
-        <div>
-          <div class="wish-icon">🥂</div>
-          <h3 class="wish-title">Brindis Cósmico</h3>
-          <p class="wish-desc">Un brindis especial frente al mar para celebrar el inicio de nuestra saga.</p>
-        </div>
-        <div>
-          <div class="wish-amount">$30.000</div>
-          <button class="btn-regalar" onclick="openModal('Brindis Cósmico', '$30.000')">Regalar Deseo</button>
-        </div>
-      </div>
-
-      <!-- Deseo 3 -->
-      <div class="wish-card">
-        <div>
-          <div class="wish-icon">🍕</div>
-          <h3 class="wish-title">Banquete de Emergencia</h3>
-          <p class="wish-desc">Delivery de pizza y comida para cuando el tiempo no dé para cocinar.</p>
-        </div>
-        <div>
-          <div class="wish-amount">$25.000</div>
-          <button class="btn-regalar" onclick="openModal('Banquete de Emergencia', '$25.000')">Regalar Deseo</button>
-        </div>
-      </div>
-
-      <!-- Deseo 4 -->
-      <div class="wish-card">
-        <div>
-          <div class="wish-icon">🍽️</div>
-          <h3 class="wish-title">Cena en el Santuario</h3>
-          <p class="wish-desc">Una velada romántica inolvidable durante nuestra luna de miel.</p>
-        </div>
-        <div>
-          <div class="wish-amount">$60.000</div>
-          <button class="btn-regalar" onclick="openModal('Cena en el Santuario', '$60.000')">Regalar Deseo</button>
-        </div>
-      </div>
-
-      <!-- Deseo 5 -->
-      <div class="wish-card">
-        <div>
-          <div class="wish-icon">🏛️</div>
-          <h3 class="wish-title">Equipamiento del Hogar</h3>
-          <p class="wish-desc">Un detalle o herramienta para fortalecer y decorar nuestro nuevo templo.</p>
-        </div>
-        <div>
-          <div class="wish-amount">$45.000</div>
-          <button class="btn-regalar" onclick="openModal('Equipamiento del Hogar', '$45.000')">Regalar Deseo</button>
-        </div>
-      </div>
-
-      <!-- Deseo 6 -->
+      <!-- 1. DESEO DE LAS ESFERAS (PRIMER LUGAR) -->
       <div class="wish-card">
         <div>
           <div class="wish-icon">🔮</div>
           <h3 class="wish-title">Deseo de las Esferas</h3>
-          <p class="wish-desc">Un aporte libre para sumar a nuestros sueños, viajes y futuros proyectos.</p>
+          <p class="wish-desc">Un aporte libre para invocar a Shenlong y sumar a nuestros sueños, viajes y futuros proyectos.</p>
         </div>
         <div>
           <div class="wish-amount">Monto Libre</div>
           <button class="btn-regalar" onclick="openModal('Deseo de las Esferas', 'Monto Libre')">Regalar Deseo</button>
         </div>
       </div>
+
+      <!-- 2. MONTO LIBRE: Luna de Miel -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🏝️</div>
+          <h3 class="wish-title">Fondo General: Luna de Miel</h3>
+          <p class="wish-desc">Tu granito de arena para hacer realidad nuestro primer gran viaje como esposos y explorar nuevos horizontes.</p>
+        </div>
+        <div>
+          <div class="wish-amount">Monto Libre</div>
+          <button class="btn-regalar" onclick="openModal('Fondo General: Luna de Miel', 'Monto Libre')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 3. MONTO LIBRE: Seguro contra ronquidos -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🎧</div>
+          <h3 class="wish-title">Seguro contra Ronquidos</h3>
+          <p class="wish-desc">Un aporte simbólico para audífonos con cancelación de ruido y poder dormir en completa paz.</p>
+        </div>
+        <div>
+          <div class="wish-amount">Monto Libre</div>
+          <button class="btn-regalar" onclick="openModal('Seguro contra Ronquidos', 'Monto Libre')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 4. MONTO LIBRE: Seguro de indemnización -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🍽️</div>
+          <h3 class="wish-title">Indemnización por Romper el Plato Favorito</h3>
+          <p class="wish-desc">Para reparar el daño emocional (y material) cuando a alguien se le resbale la loza recién lavada.</p>
+        </div>
+        <div>
+          <div class="wish-amount">Monto Libre</div>
+          <button class="btn-regalar" onclick="openModal('Indemnización por Romper Plato', 'Monto Libre')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 5. MONTO LIBRE: Fondo de fianza -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">⏰</div>
+          <h3 class="wish-title">Fondo de Fianza por Apagar la Alarma</h3>
+          <p class="wish-desc">Para pagar los Uber de emergencia esas mañanas en que la opción "posponer 5 minutos más" se nos vaya de las manos.</p>
+        </div>
+        <div>
+          <div class="wish-amount">Monto Libre</div>
+          <button class="btn-regalar" onclick="openModal('Fondo de Fianza por Alarma', 'Monto Libre')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 6. MONTO LIBRE / $5.000: El primer ladrillo -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🧱</div>
+          <h3 class="wish-title">El Primer Ladrillo del Templo</h3>
+          <p class="wish-desc">Tu grano de arena (y cemento) para construir los cimientos de nuestra casa propia. ¡Bautizaremos ese ladrillo con tu nombre!</p>
+        </div>
+        <div>
+          <div class="wish-amount">$5.000 (o Monto Libre)</div>
+          <button class="btn-regalar" onclick="openModal('El Primer Ladrillo del Templo', '$5.000 / Libre')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 7. $10.000: Paz Conyugal -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🧦</div>
+          <h3 class="wish-title">Paz Conyugal (Localizador de Calcetines)</h3>
+          <p class="wish-desc">Un fondo de emergencia para evitar la primera gran discusión sobre los calcetines tirados en el suelo.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$10.000</div>
+          <button class="btn-regalar" onclick="openModal('Paz Conyugal (Calcetines)', '$10.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 8. $10.000: Delivery de la reconciliación -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🍣</div>
+          <h3 class="wish-title">Delivery de la Reconciliación</h3>
+          <p class="wish-desc">Para esos días en que ninguno quiere cocinar, nadie sabe qué comer y la única solución diplomática es pedir sushi.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$10.000</div>
+          <button class="btn-regalar" onclick="openModal('Delivery de la Reconciliación', '$10.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 9. $10.000: Impuesto a las visitas familiares -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🍪</div>
+          <h3 class="wish-title">Impuesto a las Visitas Familiares</h3>
+          <p class="wish-desc">Un aporte destinado a tener siempre la despensa llena de galletas por si algún pariente o amistad decide pasar "solo a saludar".</p>
+        </div>
+        <div>
+          <div class="wish-amount">$10.000</div>
+          <button class="btn-regalar" onclick="openModal('Impuesto a Visitas Familiares', '$10.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 10. $15.000: Subscripción a «¿Qué vemos hoy?» -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🍿</div>
+          <h3 class="wish-title">Subscripción a «¿Qué vemos hoy?»</h3>
+          <p class="wish-desc">Financiamiento para los 45 minutos diarios que pasamos eligiendo qué ver antes de quedarnos dormidos.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$15.000</div>
+          <button class="btn-regalar" onclick="openModal('Subscripción ¿Qué vemos hoy?', '$15.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 11. $15.000: Terapia de Pareja Preventiva -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🧘</div>
+          <h3 class="wish-title">Terapia de Pareja Preventiva</h3>
+          <p class="wish-desc">Un par de bebestibles y piqueos para resolver cualquier desacuerdo como personas civilizadas.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$15.000</div>
+          <button class="btn-regalar" onclick="openModal('Terapia de Pareja Preventiva', '$15.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 12. $15.000: Ofrenda al Reino Subacuático -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🐟</div>
+          <h3 class="wish-title">Ofrenda al Reino Subacuático</h3>
+          <p class="wish-desc">Alimento premium y filtros para el acuario. Porque nuestros peces merecen vivir como la realeza y queremos evitar un motín.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$15.000</div>
+          <button class="btn-regalar" onclick="openModal('Ofrenda al Reino Subacuático', '$15.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 13. $20.000: Seguro Anti-Sillón -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🛋️</div>
+          <h3 class="wish-title">Seguro Anti-Sillón</h3>
+          <p class="wish-desc">Para cuando uno de los dos mande al otro a dormir al sofá, al menos que sea un sofá cómodo.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$20.000</div>
+          <button class="btn-regalar" onclick="openModal('Seguro Anti-Sillón', '$20.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 14. $20.000: Tostadora Sagrada -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🥪</div>
+          <h3 class="wish-title">Tostadora Sagrada</h3>
+          <p class="wish-desc">Para garantizar marraquetas crujientes y tostadas perfectas en todas nuestras mañanas.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$20.000</div>
+          <button class="btn-regalar" onclick="openModal('Tostadora Sagrada', '$20.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 15. $20.000: Frazada de Rescate Térmico -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🥶</div>
+          <h3 class="wish-title">Frazada de Rescate Térmico</h3>
+          <p class="wish-desc">Cobijas de emergencia para el esposo, para sobrevivir cuando la esposa se adueñe del 100% de la ropa de cama.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$20.000</div>
+          <button class="btn-regalar" onclick="openModal('Frazada de Rescate Térmico', '$20.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 16. $20.000: El Vórtice de Batidos -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🌪️</div>
+          <h3 class="wish-title">El Vórtice de Batidos (Juguera)</h3>
+          <p class="wish-desc">La infaltable juguera, indispensable para nuestros batidos matutinos y recetas diarias.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$20.000</div>
+          <button class="btn-regalar" onclick="openModal('El Vórtice de Batidos', '$20.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 17. $25.000: Escudo de Protección Doméstica -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">⚔️</div>
+          <h3 class="wish-title">Escudo de Protección Doméstica</h3>
+          <p class="wish-desc">Caja de herramientas básica para cuando toque armar muebles o reparar cañerías del hogar.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$25.000</div>
+          <button class="btn-regalar" onclick="openModal('Escudo de Protección Doméstica', '$25.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 18. $30.000: Combustible de la Nave -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🚀</div>
+          <h3 class="wish-title">Combustible de la Nave</h3>
+          <p class="wish-desc">Aporte para la bencina de nuestro auto, viajar a Antofagasta y no quedar a medio camino.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$30.000</div>
+          <button class="btn-regalar" onclick="openModal('Combustible de la Nave', '$30.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 19. $40.000: La Sagrada Airfryer -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🍟</div>
+          <h3 class="wish-title">La Sagrada Airfryer</h3>
+          <p class="wish-desc">El electrodoméstico que consagrará nuestra adultez y salvará nuestras cenas saludables (o papas fritas).</p>
+        </div>
+        <div>
+          <div class="wish-amount">$40.000</div>
+          <button class="btn-regalar" onclick="openModal('La Sagrada Airfryer', '$40.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 20. $50.000: Expedición a Territorio Desconocido -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🛶</div>
+          <h3 class="wish-title">Expedición a Territorio Desconocido</h3>
+          <p class="wish-desc">Para un tour, paseo o aventura especial que disfrutaremos juntos en pareja.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$50.000</div>
+          <button class="btn-regalar" onclick="openModal('Expedición a Territorio Desconocido', '$50.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 21. $55.000: Elixir de la Juventud Eterna -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🧪</div>
+          <h3 class="wish-title">Elixir de la Juventud Eterna</h3>
+          <p class="wish-desc">Un día de spa y masajes relajantes para recargar nuestro ki después de organizar todo.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$55.000</div>
+          <button class="btn-regalar" onclick="openModal('Elixir de la Juventud Eterna', '$55.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 22. $60.000: El primer aniversario -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🥂</div>
+          <h3 class="wish-title">El Primer Aniversario (Si Sobrevivimos)</h3>
+          <p class="wish-desc">Para ir a un restaurante elegante y celebrar un año entero sin pedirnos el divorcio por no lavar los platos.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$60.000</div>
+          <button class="btn-regalar" onclick="openModal('El Primer Aniversario', '$60.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
+      <!-- 23. $70.000: Robot Esclavo -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🤖</div>
+          <h3 class="wish-title">Robot Esclavo (Aspiradora)</h3>
+          <p class="wish-desc">Un pequeño androide que limpiará la casa mientras nosotros discutimos quién cocina.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$70.000</div>
+          <button class="btn-regalar" onclick="openModal('Robot Esclavo (Aspiradora)', '$70.000')">Regalar Deseo</button>
+        </div>
+      </div>
+
     </div>
   </div>
 
-  <!-- MODAL -->
+  <!-- VENTANA MODAL FLOTANTE -->
   <div class="modal-overlay" id="wishModal" onclick="closeModalOnBg(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">&times;</button>
