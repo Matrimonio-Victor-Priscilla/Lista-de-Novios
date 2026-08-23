@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Víctor & Priscilla | Celebración de Matrimonio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@300;400;500;600;700&family=Orbitron:wght@600;800&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-space: #030611;
@@ -16,6 +16,7 @@
       --text-main: #f0f4fc;
       --text-muted: #a5b4cb;
       --accent-blue: #3a7bd5;
+      --fire-glow: #ff7700;
     }
 
     * {
@@ -185,14 +186,14 @@
 
     /* CONTENEDOR PRINCIPAL */
     .container {
-      max-width: 950px;
+      max-width: 980px;
       margin: 0 auto;
       padding: 20px 16px;
       position: relative;
       z-index: 1;
     }
 
-    /* HERO */
+    /* HERO CARD */
     .hero-card {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
@@ -210,14 +211,23 @@
       border-bottom: 2px solid var(--gold);
     }
 
-    .header-content {
-      padding: 35px 20px;
+    .header-layout {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 35px 25px;
+      gap: 25px;
+    }
+
+    .header-names-col {
+      flex: 1 1 500px;
       text-align: center;
     }
 
     .names {
       font-family: 'Cinzel', serif;
-      font-size: 2.2rem;
+      font-size: 2.1rem;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: 2px;
@@ -227,49 +237,150 @@
 
     .names span.amp {
       display: block;
-      font-size: 1.4rem;
+      font-size: 1.3rem;
       color: var(--gold);
       margin: -4px 0;
     }
 
     .subtitle-badge {
       display: inline-block;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
       text-transform: uppercase;
       letter-spacing: 3px;
       color: var(--gold);
       font-weight: 600;
-      margin: 12px 0 16px;
+      margin: 10px 0 14px;
       border-top: 1px solid rgba(212, 175, 55, 0.4);
       border-bottom: 1px solid rgba(212, 175, 55, 0.4);
-      padding: 4px 18px;
+      padding: 4px 16px;
     }
 
     .epic-quotes {
       font-family: 'Cinzel', serif;
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       color: var(--gold-light);
-      max-width: 680px;
-      margin: 0 auto 18px;
-      line-height: 1.5;
+      max-width: 600px;
+      margin: 0 auto 16px;
+      line-height: 1.45;
     }
 
-    .epic-quotes p { margin-bottom: 6px; }
+    .epic-quotes p { margin-bottom: 5px; }
 
     .intro-text {
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--text-muted);
-      max-width: 600px;
+      max-width: 540px;
       margin: 0 auto;
       font-weight: 300;
     }
 
-    /* SECCIÓN SUBIR FOTOS */
+    /* === TORRE DEL RELOJ DE FUEGO (12 CASAS) === */
+    .sanctuary-tower-col {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .sanctuary-fire-clock {
+      background: radial-gradient(circle at center, rgba(30, 20, 10, 0.9) 0%, rgba(10, 14, 28, 0.95) 100%);
+      border: 2px solid var(--gold);
+      border-radius: 18px;
+      padding: 20px 18px 16px;
+      text-align: center;
+      width: 100%;
+      max-width: 330px;
+      box-shadow: 0 0 25px rgba(255, 119, 0, 0.3), inset 0 0 20px rgba(243, 198, 76, 0.15);
+      position: relative;
+    }
+
+    .tower-roof {
+      font-size: 0.8rem;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .tower-flame-icon {
+      font-size: 1.4rem;
+      animation: flamePulse 1.5s ease-in-out infinite alternate;
+      filter: drop-shadow(0 0 6px #ff7700);
+    }
+
+    @keyframes flamePulse {
+      0% { transform: scale(0.95); opacity: 0.85; }
+      100% { transform: scale(1.15); opacity: 1; }
+    }
+
+    .tower-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 2px;
+      text-shadow: 0 0 10px rgba(243, 198, 76, 0.4);
+    }
+
+    .tower-date-target {
+      font-size: 0.78rem;
+      color: #ffb066;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .countdown-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .countdown-box {
+      background: rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(243, 198, 76, 0.4);
+      border-radius: 8px;
+      padding: 8px 4px;
+      box-shadow: inset 0 0 8px rgba(255, 119, 0, 0.2);
+    }
+
+    .countdown-num {
+      font-family: 'Orbitron', monospace;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--gold);
+      text-shadow: 0 0 10px rgba(243, 198, 76, 0.7);
+      line-height: 1.1;
+    }
+
+    .countdown-lbl {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      margin-top: 3px;
+      font-weight: 600;
+    }
+
+    .tower-base-text {
+      font-size: 0.7rem;
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      margin-top: 10px;
+      letter-spacing: 1px;
+      opacity: 0.9;
+    }
+
+    /* SECCIÓN SUBIR FOTOS & SALUDOS */
     .photo-section {
       background: linear-gradient(135deg, rgba(26, 38, 74, 0.92) 0%, rgba(13, 20, 42, 0.96) 100%);
       border: 1px dashed var(--gold);
       border-radius: 16px;
-      padding: 30px 20px;
+      padding: 32px 20px;
       text-align: center;
       margin-bottom: 40px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 15px rgba(58, 123, 213, 0.2);
@@ -278,7 +389,7 @@
 
     .photo-icon { font-size: 2.8rem; margin-bottom: 10px; }
     .photo-title { font-family: 'Cinzel', serif; font-size: 1.8rem; color: var(--gold-light); margin-bottom: 8px; }
-    .photo-desc { color: var(--text-muted); font-size: 0.95rem; max-width: 580px; margin: 0 auto 20px; }
+    .photo-desc { color: var(--text-muted); font-size: 0.95rem; max-width: 620px; margin: 0 auto 22px; }
 
     .btn-upload {
       display: inline-flex;
@@ -288,10 +399,10 @@
       background: linear-gradient(45deg, var(--gold-dark), var(--gold));
       color: #0b111e;
       text-decoration: none;
-      padding: 13px 28px;
+      padding: 14px 30px;
       border-radius: 30px;
-      font-size: 0.95rem;
-      font-weight: 700;
+      font-size: 0.92rem;
+      font-weight: 800;
       letter-spacing: 1px;
       text-transform: uppercase;
       box-shadow: 0 4px 15px rgba(243, 198, 76, 0.35);
@@ -474,9 +585,10 @@
 
     .modal-note { font-size: 0.78rem; color: var(--text-muted); text-align: center; margin-top: 14px; }
 
-    @media (max-width: 600px) {
-      .names { font-size: 1.6rem; }
-      .epic-quotes { font-size: 0.95rem; }
+    @media (max-width: 768px) {
+      .header-layout { flex-direction: column; }
+      .names { font-size: 1.65rem; }
+      .epic-quotes { font-size: 0.92rem; }
       .section-title { font-size: 1.7rem; }
     }
   </style>
@@ -502,39 +614,78 @@
 
   <div class="container">
     
-    <!-- TARJETA PRINCIPAL CON PORTADA Y TÍTULOS -->
+    <!-- TARJETA HERO CON PORTADA, NOMBRES Y TORRE DEL RELOJ DE LAS 12 CASAS -->
     <div class="hero-card">
       <img src="portada.jpg" alt="Víctor & Priscilla" class="banner-img" onerror="this.style.display='none'">
 
-      <div class="header-content">
-        <h1 class="names">
-          VICTOR BARRAZA
-          <span class="amp">&</span>
-          PRISCILLA A. ROJAS
-        </h1>
+      <div class="header-layout">
+        
+        <!-- COLUMNA DE NOMBRES Y MENSAJES -->
+        <div class="header-names-col">
+          <h1 class="names">
+            VICTOR BARRAZA
+            <span class="amp">&</span>
+            PRISCILLA A. ROJAS
+          </h1>
 
-        <div class="subtitle-badge">Celebración de Matrimonio</div>
+          <div class="subtitle-badge">Celebración de Matrimonio</div>
 
-        <div class="epic-quotes">
-          <p>¡Nuestros Universos Colisionan y Formaremos la Pareja Más Fuerte!</p>
-          <p>¡Una Nueva Saga Comienza y el Cosmos nos Guía!</p>
+          <div class="epic-quotes">
+            <p>¡Nuestros Universos Colisionan y Formaremos la Pareja Más Fuerte!</p>
+            <p>¡Una Nueva Saga Comienza y el Cosmos nos Guía!</p>
+          </div>
+
+          <p class="intro-text">
+            Gracias por acompañarnos en este día tan especial. En este espacio podrás compartir tus fotos, videos y saludos con nosotros, y elegir un deseo de nuestra mesa de regalos.
+          </p>
         </div>
 
-        <p class="intro-text">
-          Gracias por acompañarnos en este día tan especial. En este espacio podrás compartir tus fotos y videos con nosotros y elegir un deseo de nuestra mesa de regalos.
-        </p>
+        <!-- COLUMNA: TORRE DEL RELOJ DE LAS 12 CASAS (SAINT SEIYA) -->
+        <div class="sanctuary-tower-col">
+          <div class="sanctuary-fire-clock">
+            <div class="tower-roof">
+              <span class="tower-flame-icon">🔥</span>
+              <span>Santuario • 12 Casas</span>
+              <span class="tower-flame-icon">🔥</span>
+            </div>
+            <div class="tower-title">El Reloj de Fuego</div>
+            <div class="tower-date-target">15 DE SEPTIEMBRE • 12:00 PM</div>
+            
+            <div class="countdown-grid">
+              <div class="countdown-box">
+                <div class="countdown-num" id="cd-days">00</div>
+                <div class="countdown-lbl">Días</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-num" id="cd-hours">00</div>
+                <div class="countdown-lbl">Horas</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-num" id="cd-minutes">00</div>
+                <div class="countdown-lbl">Min</div>
+              </div>
+              <div class="countdown-box">
+                <div class="countdown-num" id="cd-seconds">00</div>
+                <div class="countdown-lbl">Seg</div>
+              </div>
+            </div>
+
+            <div class="tower-base-text">⏳ Cuenta Regresiva para la Gran Unión ⚔️</div>
+          </div>
+        </div>
+
       </div>
     </div>
 
-    <!-- SECCIÓN: SUBIR FOTOS Y VIDEOS -->
+    <!-- SECCIÓN: SUBIR FOTOS, VIDEOS & SALUDOS -->
     <div class="photo-section">
-      <div class="photo-icon">🐉 📸 🌌</div>
-      <h2 class="photo-title">Álbum Digital de Recuerdos</h2>
+      <div class="photo-icon">🐉 📸 ✍️ 🌌</div>
+      <h2 class="photo-title">Álbum Digital de Recuerdos & Saludos</h2>
       <p class="photo-desc">
-        ¡Queremos revivir cada momento a través de tus ojos! Haz clic abajo para subir tus fotos, videos y dejarnos tu dedicatoria.
+        ¡Queremos revivir cada momento a través de tus ojos y guardar tus mejores deseos! Haz clic abajo para subir tus fotos, videos y dejarnos tu dedicatoria especial.
       </p>
       <a href="https://forms.gle/Y1t1LFF4MAq5KDY58" target="_blank" class="btn-upload">
-        Subir Fotos & Videos ↗
+        SUBIR FOTOS, VIDEOS & SALUDOS ↗
       </a>
     </div>
 
@@ -951,44 +1102,105 @@
   </div>
 
   <script>
-    const TELEFONO_WHATSAPP = "56985604781";
-    
-    const DATOS_COPIAR = `Titular: Victor Barraza
-RUT: 16847766-k
-Banco: Banco Estado
-Tipo: Cuenta Vista
-N° Cuenta: 16847766
-Correo: victor.barraza.avalos@gmail.com`;
+    // CUENTA REGRESIVA - 15 DE SEPTIEMBRE A LAS 12:00 PM
+    function updateFireClock() {
+      const targetYear = new Date().getFullYear();
+      let targetDate = new Date(`September 15, ${targetYear} 12:00:00`).getTime();
+      const now = new Date().getTime();
 
-    function openModal(nombreDeseo, monto) {
-      document.getElementById('modalWishName').innerText = `Has elegido: ${nombreDeseo} (${monto})`;
-      const mensaje = `¡Hola Víctor y Priscilla! Elegí regalarles el deseo "${nombreDeseo}" para su matrimonio. ¡Muchas felicidades en esta nueva saga! ✨🐉`;
-      const urlWhatsapp = `https://api.whatsapp.com/send?phone=${TELEFONO_WHATSAPP}&text=${encodeURIComponent(mensaje)}`;
-      document.getElementById('whatsappBtn').href = urlWhatsapp;
-      document.getElementById('wishModal').classList.add('active');
+      // Si ya pasó en este año, apunta al próximo
+      if (targetDate - now < 0) {
+        targetDate = new Date(`September 15, ${targetYear + 1} 12:00:00`).getTime();
+      }
+
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60))Aquí tienes el código completo con todas las modificaciones integradas:
+
+1. **Torre del Reloj de Fuego del Santuario (Saint Seiya):** Diseñada en la cabecera junto a sus nombres con columnas griegas, frontón y el dial de las 12 Casas zodiacales con fuego cósmico y la **cuenta regresiva digital en vivo** (Días, Horas, Minutos y Segundos) programada para el **15 de septiembre a las 12:00 PM**.
+2. **Sección de Álbum & Saludos:** Texto actualizado destacando la posibilidad de enviar fotos, videos y dedicatorias.
+3. **Botón modificado:** Ahora dice exactamente **`SUBIR FOTOS, VIDEOS & SALUDOS ↗`**.
+
+Copia todo el bloque, edita tu archivo **`index.html`** en GitHub y haz clic en **Commit changes**:
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Víctor & Priscilla | Celebración de Matrimonio</title>
+  <link href="[https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap](https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap)" rel="stylesheet">
+  <style>
+    :root {
+      --bg-space: #030611;
+      --card-bg: rgba(14, 21, 45, 0.88);
+      --card-border: rgba(212, 175, 55, 0.4);
+      --gold: #f3c64c;
+      --gold-light: #ffea9f;
+      --gold-dark: #b8860b;
+      --text-main: #f0f4fc;
+      --text-muted: #a5b4cb;
+      --accent-blue: #3a7bd5;
+      --fire: #ff6b35;
     }
 
-    function closeModal() {
-      document.getElementById('wishModal').classList.remove('active');
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    function closeModalOnBg(e) {
-      if (e.target.id === 'wishModal') closeModal();
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-space);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 70px;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    function copyBankDetails() {
-      navigator.clipboard.writeText(DATOS_COPIAR).then(() => {
-        const btn = document.getElementById('copyBtn');
-        btn.innerText = "✅ ¡Datos copiados al portapapeles!";
-        btn.style.backgroundColor = "rgba(40, 167, 69, 0.4)";
-        btn.style.borderColor = "#28a745";
-        setTimeout(() => {
-          btn.innerText = "📋 Copiar datos bancarios";
-          btn.style.backgroundColor = "rgba(243, 198, 76, 0.15)";
-          btn.style.borderColor = "var(--gold)";
-        }, 3000);
-      });
+    /* === FONDO GALÁCTICO Y NEBULOSAS === */
+    .galaxy-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -5;
+      background: 
+        radial-gradient(circle at 15% 20%, rgba(138, 43, 226, 0.38) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(30, 144, 255, 0.35) 0%, transparent 50%),
+        radial-gradient(circle at 50% 40%, rgba(212, 175, 55, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 75% 15%, rgba(255, 20, 147, 0.25) 0%, transparent 40%),
+        linear-gradient(180deg, #04060e 0%, #0a0f24 50%, #030611 100%);
+      animation: galaxyPulse 18s ease-in-out infinite alternate;
+      pointer-events: none;
     }
-  </script>
-</body>
-</html>
+
+    @keyframes galaxyPulse {
+      0% { transform: scale(1); filter: hue-rotate(0deg); }
+      50% { transform: scale(1.05); filter: hue-rotate(15deg); }
+      100% { transform: scale(1); filter: hue-rotate(0deg); }
+    }
+
+    /* CAPAS DE ESTRELLAS TITILANTES */
+    .stars-layer-1 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(1.5px 1.5px at 15px 25px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 80px 140px, #f3c64c, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 190px 60px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 280px 220px, #9bbaff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 360px 110px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 450px 280px, #ffd700, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 520px 40px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 600px 190px, #ff9be3, rgba(0,0,0,0)),
