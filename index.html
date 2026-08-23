@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-space: #050711;
+      --bg-space: #030611;
       --card-bg: rgba(14, 21, 45, 0.88);
       --card-border: rgba(212, 175, 55, 0.4);
       --gold: #f3c64c;
@@ -42,13 +42,13 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      z-index: -3;
+      z-index: -4;
       background: 
-        radial-gradient(circle at 20% 25%, rgba(138, 43, 226, 0.32) 0%, transparent 45%),
-        radial-gradient(circle at 80% 70%, rgba(30, 144, 255, 0.28) 0%, transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
-        radial-gradient(circle at 75% 15%, rgba(255, 20, 147, 0.2) 0%, transparent 40%),
-        linear-gradient(180deg, #060914 0%, #0c1127 50%, #050711 100%);
+        radial-gradient(circle at 15% 20%, rgba(138, 43, 226, 0.35) 0%, transparent 45%),
+        radial-gradient(circle at 85% 75%, rgba(30, 144, 255, 0.32) 0%, transparent 50%),
+        radial-gradient(circle at 50% 40%, rgba(212, 175, 55, 0.1) 0%, transparent 60%),
+        radial-gradient(circle at 75% 15%, rgba(255, 20, 147, 0.22) 0%, transparent 40%),
+        linear-gradient(180deg, #04060e 0%, #0a0f24 50%, #030611 100%);
       animation: galaxyPulse 18s ease-in-out infinite alternate;
       pointer-events: none;
     }
@@ -59,7 +59,7 @@
       100% { transform: scale(1); filter: hue-rotate(0deg); }
     }
 
-    /* CAPA 1 DE ESTRELLAS TITILANTES (PEQUEÑAS) */
+    /* CAPA 1: ESTRELLAS FINAS Y MEDIANAS */
     .stars-layer-1 {
       position: fixed;
       top: 0;
@@ -67,21 +67,23 @@
       width: 100%;
       height: 100%;
       background-image: 
-        radial-gradient(1.2px 1.2px at 30px 40px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 120px 180px, #f3c64c, rgba(0,0,0,0)),
-        radial-gradient(1.2px 1.2px at 280px 90px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1.8px 1.8px at 420px 320px, #9bbaff, rgba(0,0,0,0)),
-        radial-gradient(1.2px 1.2px at 620px 220px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 780px 470px, #ffd700, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 150px 400px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1.6px 1.6px at 500px 100px, #ff9be3, rgba(0,0,0,0));
-      background-size: 650px 650px;
-      z-index: -2;
-      animation: twinkleOne 4s ease-in-out infinite alternate;
+        radial-gradient(1.5px 1.5px at 25px 35px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 110px 170px, #f3c64c, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 260px 80px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2.2px 2.2px at 390px 290px, #9bbaff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 580px 200px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 740px 420px, #ffd700, rgba(0,0,0,0)),
+        radial-gradient(1.8px 1.8px at 140px 380px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 480px 90px, #ff9be3, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 830px 150px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2.2px 2.2px at 670px 330px, #7cd4fd, rgba(0,0,0,0));
+      background-size: 550px 550px;
+      z-index: -3;
+      animation: twinkleFast 3s ease-in-out infinite alternate;
       pointer-events: none;
     }
 
-    /* CAPA 2 DE ESTRELLAS TITILANTES (MEDIANAS / MÁS BRILLANTES) */
+    /* CAPA 2: ESTRELLAS GRANDES Y TITILANTES */
     .stars-layer-2 {
       position: fixed;
       top: 0;
@@ -89,28 +91,118 @@
       width: 100%;
       height: 100%;
       background-image: 
-        radial-gradient(2px 2px at 90px 110px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2.2px 2.2px at 220px 310px, #ffe082, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 360px 180px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2.5px 2.5px at 560px 420px, #7cd4fd, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 710px 130px, #fff, rgba(0,0,0,0)),
-        radial-gradient(2.3px 2.3px at 850px 350px, #ffd54f, rgba(0,0,0,0));
-      background-size: 800px 800px;
-      z-index: -1;
-      animation: twinkleTwo 6s ease-in-out infinite alternate;
+        radial-gradient(3px 3px at 80px 100px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(3.5px 3.5px at 210px 280px, #ffe082, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 340px 160px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 520px 390px, #7cd4fd, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 680px 110px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(3.5px 3.5px at 810px 310px, #ffd54f, rgba(0,0,0,0)),
+        radial-gradient(3px 3px at 180px 480px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(4px 4px at 620px 20px, #ffb3ba, rgba(0,0,0,0));
+      background-size: 700px 700px;
+      z-index: -2;
+      animation: twinkleSlow 5s ease-in-out infinite alternate;
       pointer-events: none;
     }
 
-    @keyframes twinkleOne {
-      0% { opacity: 0.35; transform: translateY(0); }
-      50% { opacity: 0.95; }
-      100% { opacity: 0.45; transform: translateY(-4px); }
+    /* CAPA 3: ESTRELLAS CON DESTELLO GIGANTE */
+    .stars-layer-3 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(4.5px 4.5px at 150px 80px, #ffffff, rgba(255,255,255,0.2) 60%, rgba(0,0,0,0)),
+        radial-gradient(5px 5px at 450px 250px, #f3c64c, rgba(243,198,76,0.3) 60%, rgba(0,0,0,0)),
+        radial-gradient(4.5px 4.5px at 780px 180px, #ffffff, rgba(255,255,255,0.2) 60%, rgba(0,0,0,0)),
+        radial-gradient(5px 5px at 300px 420px, #7cd4fd, rgba(124,212,253,0.3) 60%, rgba(0,0,0,0));
+      background-size: 900px 900px;
+      z-index: -2;
+      animation: twinkleGlow 4s ease-in-out infinite alternate;
+      pointer-events: none;
     }
 
-    @keyframes twinkleTwo {
-      0% { opacity: 0.8; transform: translateY(0); }
-      50% { opacity: 0.3; }
-      100% { opacity: 1; transform: translateY(-7px); }
+    @keyframes twinkleFast {
+      0% { opacity: 0.3; }
+      50% { opacity: 0.95; }
+      100% { opacity: 0.4; }
+    }
+
+    @keyframes twinkleSlow {
+      0% { opacity: 0.85; transform: scale(0.95); }
+      50% { opacity: 0.25; }
+      100% { opacity: 1; transform: scale(1.05); }
+    }
+
+    @keyframes twinkleGlow {
+      0% { opacity: 0.4; filter: drop-shadow(0 0 2px #fff); }
+      50% { opacity: 1; filter: drop-shadow(0 0 6px #f3c64c); }
+      100% { opacity: 0.5; filter: drop-shadow(0 0 2px #7cd4fd); }
+    }
+
+    /* === ESTRELLAS FUGACES === */
+    .shooting-star-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .shooting-star {
+      position: absolute;
+      height: 2px;
+      background: linear-gradient(-45deg, #ffffff, rgba(243, 198, 76, 0.8), rgba(0, 0, 0, 0));
+      border-radius: 999px;
+      filter: drop-shadow(0 0 6px #ffffff);
+      opacity: 0;
+      transform: rotate(-35deg);
+    }
+
+    .star-1 {
+      top: 15%;
+      left: 70%;
+      width: 140px;
+      animation: shoot1 9s ease-in-out infinite;
+    }
+
+    .star-2 {
+      top: 35%;
+      left: 85%;
+      width: 180px;
+      animation: shoot2 14s ease-in-out 4s infinite;
+    }
+
+    .star-3 {
+      top: 8%;
+      left: 40%;
+      width: 120px;
+      animation: shoot3 11s ease-in-out 8s infinite;
+    }
+
+    @keyframes shoot1 {
+      0% { transform: translateX(0) translateY(0) rotate(-35deg); opacity: 0; }
+      2% { opacity: 1; }
+      6% { transform: translateX(-400px) translateY(280px) rotate(-35deg); opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes shoot2 {
+      0% { transform: translateX(0) translateY(0) rotate(-35deg); opacity: 0; }
+      2% { opacity: 1; }
+      7% { transform: translateX(-500px) translateY(350px) rotate(-35deg); opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    @keyframes shoot3 {
+      0% { transform: translateX(0) translateY(0) rotate(-35deg); opacity: 0; }
+      2% { opacity: 1; }
+      5% { transform: translateX(-350px) translateY(240px) rotate(-35deg); opacity: 0; }
+      100% { opacity: 0; }
     }
 
     /* CONTENEDOR PRINCIPAL */
@@ -489,10 +581,18 @@
 </head>
 <body>
 
-  <!-- ELEMENTOS DE FONDO CÓSMICO -->
+  <!-- ELEMENTOS DE FONDO CÓSMICO Y ESTRELLAS -->
   <div class="galaxy-bg"></div>
   <div class="stars-layer-1"></div>
   <div class="stars-layer-2"></div>
+  <div class="stars-layer-3"></div>
+
+  <!-- ESTRELLAS FUGACES -->
+  <div class="shooting-star-container">
+    <div class="shooting-star star-1"></div>
+    <div class="shooting-star star-2"></div>
+    <div class="shooting-star star-3"></div>
+  </div>
 
   <div class="container">
     
