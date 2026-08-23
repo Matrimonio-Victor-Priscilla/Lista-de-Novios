@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mesa de Deseos & Recuerdos | Nuestro Matrimonio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <title>Víctor & Priscilla | Celebración de Matrimonio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #7a6a58;
-      --primary-dark: #5c4e3f;
-      --bg-cream: #faf8f5;
-      --card-bg: #ffffff;
-      --text-dark: #333333;
-      --text-muted: #6b6660;
-      --accent: #d4af37;
-      --border-color: #eae5de;
-      --photo-bg: #f4efe9;
+      --bg-space: #060913;
+      --card-bg: rgba(16, 24, 48, 0.85);
+      --card-border: rgba(212, 175, 55, 0.35);
+      --gold: #f3c64c;
+      --gold-light: #ffea9f;
+      --gold-dark: #b8860b;
+      --text-main: #f0f4fc;
+      --text-muted: #a5b4cb;
+      --accent-blue: #3a7bd5;
     }
 
     * {
@@ -26,36 +26,108 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: var(--bg-cream);
-      color: var(--text-dark);
+      background: radial-gradient(ellipse at top, #151d3b 0%, var(--bg-space) 70%);
+      color: var(--text-main);
       line-height: 1.6;
-      padding-bottom: 60px;
+      padding-bottom: 70px;
+      min-height: 100vh;
+      position: relative;
+      overflow-x: hidden;
     }
 
-    /* HEADER */
-    header {
-      text-align: center;
-      padding: 50px 20px 30px;
-      max-width: 800px;
+    /* ESTRELLAS DE FONDO */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 100px 150px, #f3c64c, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 250px 80px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 400px 300px, #7aa5ff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 600px 200px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 800px 450px, #f3c64c, rgba(0,0,0,0));
+      background-repeat: repeat;
+      background-size: 800px 800px;
+      opacity: 0.6;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* CONTENEDOR PRINCIPAL */
+    .container {
+      max-width: 950px;
       margin: 0 auto;
+      padding: 20px 16px;
+    }
+
+    /* PORTADA & HEADER */
+    .hero-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.15);
+      margin-bottom: 35px;
+      backdrop-filter: blur(10px);
+    }
+
+    .banner-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .header-content {
+      padding: 35px 20px;
+      text-align: center;
     }
 
     .names {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 3rem;
-      font-weight: 600;
-      color: var(--primary-dark);
-      letter-spacing: 1px;
-      margin-bottom: 8px;
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: 2px;
+      text-shadow: 0 0 15px rgba(243, 198, 76, 0.4);
+      margin-bottom: 4px;
     }
 
-    .subtitle {
-      font-size: 1rem;
+    .names span.amp {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--gold);
+      margin: -4px 0;
+    }
+
+    .subtitle-badge {
+      display: inline-block;
+      font-size: 0.95rem;
       text-transform: uppercase;
       letter-spacing: 3px;
-      color: var(--accent);
-      margin-bottom: 15px;
-      font-weight: 500;
+      color: var(--gold);
+      font-weight: 600;
+      margin: 12px 0 16px;
+      border-top: 1px solid rgba(212, 175, 55, 0.4);
+      border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 4px 18px;
+    }
+
+    .epic-quotes {
+      font-family: 'Cinzel', serif;
+      font-size: 1.05rem;
+      color: var(--gold-light);
+      max-width: 680px;
+      margin: 0 auto 18px;
+      line-height: 1.5;
+    }
+
+    .epic-quotes p {
+      margin-bottom: 6px;
     }
 
     .intro-text {
@@ -66,19 +138,68 @@
       font-weight: 300;
     }
 
-    /* CONTAINER */
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
+    /* SECCIÓN SUBIR FOTOS */
+    .photo-section {
+      background: linear-gradient(135deg, rgba(26, 38, 74, 0.9) 0%, rgba(13, 20, 42, 0.95) 100%);
+      border: 1px dashed var(--gold);
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      margin-bottom: 40px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
     }
 
+    .photo-icon {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .photo-title {
+      font-family: 'Cinzel', serif;
+      font-size: 1.8rem;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .photo-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 580px;
+      margin: 0 auto 20px;
+    }
+
+    .btn-upload {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(45deg, var(--gold-dark), var(--gold));
+      color: #0b111e;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(243, 198, 76, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .btn-upload:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(243, 198, 76, 0.55);
+      color: #000;
+    }
+
+    /* SECCIÓN DESEOS */
     .section-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.2rem;
+      font-family: 'Cinzel', serif;
+      font-size: 2.1rem;
       text-align: center;
-      color: var(--primary-dark);
-      margin: 40px 0 10px;
+      color: var(--gold);
+      margin-bottom: 5px;
+      text-shadow: 0 0 10px rgba(243, 198, 76, 0.3);
     }
 
     .section-subtitle {
@@ -88,134 +209,82 @@
       margin-bottom: 25px;
     }
 
-    /* PHOTO UPLOAD HERO BANNER */
-    .photo-section {
-      background: var(--photo-bg);
-      border: 2px dashed #d5cbbf;
-      border-radius: 20px;
-      padding: 35px 25px;
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 40px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
-    }
-
-    .photo-icon {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-
-    .photo-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2rem;
-      color: var(--primary-dark);
-      margin-bottom: 10px;
-    }
-
-    .photo-desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      max-width: 550px;
-      margin: 0 auto 20px;
-    }
-
-    .btn-upload {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      background-color: var(--primary-dark);
-      color: #ffffff;
-      text-decoration: none;
-      padding: 14px 28px;
-      border-radius: 30px;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 12px rgba(92, 78, 63, 0.25);
-    }
-
-    .btn-upload:hover {
-      background-color: var(--primary);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(92, 78, 63, 0.35);
-    }
-
-    /* WISHES GRID */
     .grid-wishes {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-      margin-top: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 22px;
     }
 
     .wish-card {
       background: var(--card-bg);
-      border-radius: 16px;
-      border: 1px solid var(--border-color);
-      padding: 30px 25px;
+      border-radius: 14px;
+      border: 1px solid rgba(212, 175, 55, 0.25);
+      padding: 25px 20px;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
     }
 
     .wish-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-color: var(--gold);
+      box-shadow: 0 10px 25px rgba(243, 198, 76, 0.15);
     }
 
     .wish-icon {
-      font-size: 2.5rem;
-      margin-bottom: 12px;
+      font-size: 2.3rem;
+      margin-bottom: 10px;
     }
 
     .wish-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem;
-      font-weight: 600;
-      color: var(--primary-dark);
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold-light);
       margin-bottom: 8px;
     }
 
     .wish-desc {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
-      margin-bottom: 20px;
-      min-height: 45px;
+      margin-bottom: 18px;
+      min-height: 42px;
     }
 
     .wish-amount {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 20px;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 18px;
       padding: 6px 14px;
-      background: #f4efe9;
+      background: rgba(243, 198, 76, 0.1);
+      border: 1px solid rgba(243, 198, 76, 0.3);
       border-radius: 20px;
       display: inline-block;
       align-self: center;
     }
 
     .btn-regalar {
-      background-color: var(--primary);
-      color: #fff;
-      border: none;
-      padding: 12px 24px;
+      background: transparent;
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
+      padding: 11px 20px;
       border-radius: 8px;
-      font-size: 0.9rem;
-      font-weight: 500;
+      font-size: 0.85rem;
+      font-weight: 600;
       cursor: pointer;
-      letter-spacing: 0.5px;
-      transition: background 0.2s ease;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: all 0.2s ease;
       width: 100%;
     }
 
     .btn-regalar:hover {
-      background-color: var(--primary-dark);
+      background: var(--gold);
+      color: #0b111e;
     }
 
     /* MODAL */
@@ -225,13 +294,13 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(3, 5, 12, 0.85);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 1000;
       padding: 20px;
-      backdrop-filter: blur(4px);
+      backdrop-filter: blur(6px);
     }
 
     .modal-overlay.active {
@@ -239,12 +308,14 @@
     }
 
     .modal-content {
-      background: #ffffff;
-      padding: 35px 30px;
+      background: #0f172a;
+      border: 1px solid var(--gold);
+      padding: 30px 25px;
       border-radius: 16px;
       max-width: 480px;
       width: 100%;
       position: relative;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(243, 198, 76, 0.2);
       animation: modalSlide 0.3s ease;
     }
 
@@ -257,7 +328,7 @@
       position: absolute;
       top: 15px;
       right: 18px;
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       background: none;
       border: none;
       cursor: pointer;
@@ -265,28 +336,27 @@
     }
 
     .modal-title {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.8rem;
-      color: var(--primary-dark);
+      font-family: 'Cinzel', serif;
+      font-size: 1.7rem;
+      color: var(--gold);
       text-align: center;
-      margin-bottom: 5px;
+      margin-bottom: 4px;
     }
 
     .modal-selected-wish {
       text-align: center;
       font-size: 0.95rem;
-      color: var(--accent);
-      font-weight: 500;
+      color: var(--gold-light);
       margin-bottom: 20px;
     }
 
     .bank-box {
-      background: #f9f7f4;
-      border: 1px solid var(--border-color);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(212, 175, 55, 0.3);
       border-radius: 10px;
       padding: 16px;
-      margin-bottom: 20px;
-      font-size: 0.9rem;
+      margin-bottom: 18px;
+      font-size: 0.88rem;
     }
 
     .bank-item {
@@ -301,30 +371,29 @@
 
     .bank-label {
       color: var(--text-muted);
-      font-weight: 400;
     }
 
     .bank-value {
       font-weight: 600;
-      color: var(--text-dark);
+      color: #ffffff;
     }
 
     .btn-copy {
-      background-color: #ede6dc;
-      color: var(--primary-dark);
-      border: none;
+      background: rgba(243, 198, 76, 0.15);
+      color: var(--gold-light);
+      border: 1px solid var(--gold);
       padding: 10px 16px;
       border-radius: 6px;
       font-size: 0.85rem;
       cursor: pointer;
-      font-weight: 500;
+      font-weight: 600;
       width: 100%;
       margin-bottom: 12px;
       transition: background 0.2s;
     }
 
     .btn-copy:hover {
-      background-color: #ded3c5;
+      background: rgba(243, 198, 76, 0.3);
     }
 
     .btn-whatsapp {
@@ -345,53 +414,74 @@
     }
 
     .modal-note {
-      font-size: 0.8rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
       text-align: center;
-      margin-top: 15px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .names { font-size: 1.6rem; }
+      .epic-quotes { font-size: 0.95rem; }
+      .section-title { font-size: 1.7rem; }
     }
   </style>
 </head>
 <body>
 
-  <header>
-    <div class="subtitle">Celebración de Matrimonio</div>
-    <h1 class="names">Camila & Felipe</h1>
-    <p class="intro-text">
-      Gracias por acompañarnos en este día tan especial. En este espacio podrás compartir tus fotos con nosotros y elegir un deseo de nuestra mesa de regalos.
-    </p>
-  </header>
-
   <div class="container">
+    
+    <!-- TARJETA PRINCIPAL CON PORTADA Y TÍTULOS -->
+    <div class="hero-card">
+      <img src="portada.jpg" alt="Víctor & Priscilla" class="banner-img" onerror="this.style.display='none'">
 
-    <!-- SECCIÓN: SUBIR FOTOS Y VIDEOS -->
+      <div class="header-content">
+        <h1 class="names">
+          VICTOR BARRAZA
+          <span class="amp">&</span>
+          PRISCILLA A. ROJAS
+        </h1>
+
+        <div class="subtitle-badge">Celebración de Matrimonio</div>
+
+        <div class="epic-quotes">
+          <p>¡Nuestros Universos Colisionan y Formaremos la Pareja Más Fuerte!</p>
+          <p>¡Una Nueva Saga Comienza y el Cosmos nos Guía!</p>
+        </div>
+
+        <p class="intro-text">
+          Gracias por acompañarnos en este día tan especial. En este espacio podrás compartir tus fotos y videos con nosotros y elegir un deseo de nuestra mesa de regalos.
+        </p>
+      </div>
+    </div>
+
+    <!-- SECCIÓN: SUBIR FOTOS Y VIDEOS (ONEDRIVE INTEGRADO) -->
     <div class="photo-section">
-      <div class="photo-icon">📸</div>
+      <div class="photo-icon">🐉 📸 🌌</div>
       <h2 class="photo-title">Álbum Digital de Recuerdos</h2>
       <p class="photo-desc">
-        ¡Queremos ver el matrimonio a través de tus ojos! Sube aquí todas las fotos y videos que tomes durante la celebración.
+        ¡Queremos revivir cada momento a través de tus ojos! Sube aquí todas las fotos y videos que tomes durante la celebración.
       </p>
-      <!-- REEMPLAZA EL LINK DE ABAJO CON TU ENLACE DE DROPBOX O GOOGLE DRIVE -->
-      <a href="https://www.dropbox.com/request/TU_LINK_AQUI" target="_blank" class="btn-upload">
-        <span>Subir Fotos & Videos</span> ↗
+      <a href="https://1drv.ms/f/c/c24a95c0b190afea/IgATJmXjNfrQRKq7bY-8DELFAZ6aS8-2xhjMLzO15YTEEFo?e=amoaSW" target="_blank" class="btn-upload">
+        Subir Fotos & Videos ↗
       </a>
     </div>
 
     <!-- SECCIÓN: MESA DE DESEOS -->
     <h2 class="section-title">Mesa de Deseos</h2>
-    <p class="section-subtitle">Si deseas hacernos un regalo, puedes ayudarnos a cumplir una de estas experiencias.</p>
+    <p class="section-subtitle">Si deseas hacernos un presente, puedes ayudarnos a cumplir una de estas misiones y aventuras.</p>
 
     <div class="grid-wishes">
       <!-- Deseo 1 -->
       <div class="wish-card">
         <div>
           <div class="wish-icon">☕</div>
-          <h3 class="wish-title">Desayuno & Café</h3>
-          <p class="wish-desc">Para disfrutar de un café y tostadas en nuestro primer amanecer de casados.</p>
+          <h3 class="wish-title">Recarga de Energía</h3>
+          <p class="wish-desc">Para un desayuno y café reparador en nuestro primer amanecer de casados.</p>
         </div>
         <div>
           <div class="wish-amount">$15.000</div>
-          <button class="btn-regalar" onclick="openModal('Desayuno & Café', '$15.000')">Regalar este deseo</button>
+          <button class="btn-regalar" onclick="openModal('Recarga de Energía (Desayuno)', '$15.000')">Regalar Deseo</button>
         </div>
       </div>
 
@@ -399,12 +489,12 @@
       <div class="wish-card">
         <div>
           <div class="wish-icon">🥂</div>
-          <h3 class="wish-title">Brindis al Atardecer</h3>
-          <p class="wish-desc">Un par de cócteles frente a la playa para brindar por nuestra nueva etapa.</p>
+          <h3 class="wish-title">Brindis Cósmico</h3>
+          <p class="wish-desc">Un brindis especial frente al mar para celebrar el inicio de nuestra saga.</p>
         </div>
         <div>
           <div class="wish-amount">$30.000</div>
-          <button class="btn-regalar" onclick="openModal('Brindis al Atardecer', '$30.000')">Regalar este deseo</button>
+          <button class="btn-regalar" onclick="openModal('Brindis Cósmico', '$30.000')">Regalar Deseo</button>
         </div>
       </div>
 
@@ -412,12 +502,12 @@
       <div class="wish-card">
         <div>
           <div class="wish-icon">🍕</div>
-          <h3 class="wish-title">Cena de Emergencia</h3>
-          <p class="wish-desc">Delivery salvador para los días en que a ninguno le toque cocinar.</p>
+          <h3 class="wish-title">Banquete de Emergencia</h3>
+          <p class="wish-desc">Delivery de pizza y comida para cuando el tiempo no dé para cocinar.</p>
         </div>
         <div>
           <div class="wish-amount">$25.000</div>
-          <button class="btn-regalar" onclick="openModal('Cena de Emergencia', '$25.000')">Regalar este deseo</button>
+          <button class="btn-regalar" onclick="openModal('Banquete de Emergencia', '$25.000')">Regalar Deseo</button>
         </div>
       </div>
 
@@ -425,44 +515,44 @@
       <div class="wish-card">
         <div>
           <div class="wish-icon">🍽️</div>
-          <h3 class="wish-title">Cena Romántica</h3>
-          <p class="wish-desc">Una velada especial con buena comida y vista inolvidable durante la luna de miel.</p>
+          <h3 class="wish-title">Cena en el Santuario</h3>
+          <p class="wish-desc">Una velada romántica inolvidable durante nuestra luna de miel.</p>
         </div>
         <div>
           <div class="wish-amount">$60.000</div>
-          <button class="btn-regalar" onclick="openModal('Cena Romántica', '$60.000')">Regalar este deseo</button>
+          <button class="btn-regalar" onclick="openModal('Cena en el Santuario', '$60.000')">Regalar Deseo</button>
         </div>
       </div>
 
       <!-- Deseo 5 -->
       <div class="wish-card">
         <div>
-          <div class="wish-icon">🏡</div>
-          <h3 class="wish-title">Rincón del Hogar</h3>
-          <p class="wish-desc">Un detalle decorativo o equipamiento para hacer más acogedor nuestro nido.</p>
+          <div class="wish-icon">🏛️</div>
+          <h3 class="wish-title">Equipamiento del Hogar</h3>
+          <p class="wish-desc">Un detalle o herramienta para fortalecer y decorar nuestro nuevo templo.</p>
         </div>
         <div>
           <div class="wish-amount">$45.000</div>
-          <button class="btn-regalar" onclick="openModal('Rincón del Hogar', '$45.000')">Regalar este deseo</button>
+          <button class="btn-regalar" onclick="openModal('Equipamiento del Hogar', '$45.000')">Regalar Deseo</button>
         </div>
       </div>
 
       <!-- Deseo 6 -->
       <div class="wish-card">
         <div>
-          <div class="wish-icon">✨</div>
-          <h3 class="wish-title">Deseo a Tu Gusto</h3>
-          <p class="wish-desc">Un aporte libre para sumar a nuestros sueños, ahorros y futuros proyectos.</p>
+          <div class="wish-icon">🔮</div>
+          <h3 class="wish-title">Deseo de las Esferas</h3>
+          <p class="wish-desc">Un aporte libre para sumar a nuestros sueños, viajes y futuros proyectos.</p>
         </div>
         <div>
           <div class="wish-amount">Monto Libre</div>
-          <button class="btn-regalar" onclick="openModal('Deseo a Tu Gusto', 'Monto Libre')">Regalar este deseo</button>
+          <button class="btn-regalar" onclick="openModal('Deseo de las Esferas', 'Monto Libre')">Regalar Deseo</button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- MODAL FLOTANTE -->
+  <!-- VENTANA MODAL -->
   <div class="modal-overlay" id="wishModal" onclick="closeModalOnBg(event)">
     <div class="modal-content">
       <button class="modal-close" onclick="closeModal()">&times;</button>
@@ -470,12 +560,12 @@
       <div class="modal-selected-wish" id="modalWishName">Deseo seleccionado</div>
 
       <div class="bank-box" id="bankDetails">
-        <div class="bank-item"><span class="bank-label">Titular:</span> <span class="bank-value">Camila y Felipe</span></div>
-        <div class="bank-item"><span class="bank-label">RUT:</span> <span class="bank-value">12.345.678-9</span></div>
-        <div class="bank-item"><span class="bank-label">Banco:</span> <span class="bank-value">Banco de Chile</span></div>
-        <div class="bank-item"><span class="bank-label">Tipo de Cuenta:</span> <span class="bank-value">Cuenta Corriente</span></div>
-        <div class="bank-item"><span class="bank-label">N° de Cuenta:</span> <span class="bank-value">1234567890</span></div>
-        <div class="bank-item"><span class="bank-label">Correo:</span> <span class="bank-value">contacto@ejemplo.com</span></div>
+        <div class="bank-item"><span class="bank-label">Titular:</span> <span class="bank-value">Victor Barraza</span></div>
+        <div class="bank-item"><span class="bank-label">RUT:</span> <span class="bank-value">16847766-k</span></div>
+        <div class="bank-item"><span class="bank-label">Banco:</span> <span class="bank-value">Banco Estado</span></div>
+        <div class="bank-item"><span class="bank-label">Tipo de Cuenta:</span> <span class="bank-value">Cuenta Vista</span></div>
+        <div class="bank-item"><span class="bank-label">N° de Cuenta:</span> <span class="bank-value">16847766</span></div>
+        <div class="bank-item"><span class="bank-label">Correo:</span> <span class="bank-value">victor.barraza.avalos@gmail.com</span></div>
       </div>
 
       <button class="btn-copy" id="copyBtn" onclick="copyBankDetails()">📋 Copiar datos bancarios</button>
@@ -489,18 +579,18 @@
   </div>
 
   <script>
-    const TELEFONO_WHATSAPP = "56912345678";
+    const TELEFONO_WHATSAPP = "56985604781";
     
-    const DATOS_COPIAR = `Titular: Camila y Felipe
-RUT: 12.345.678-9
-Banco: Banco de Chile
-Tipo: Cuenta Corriente
-N° Cuenta: 1234567890
-Correo: contacto@ejemplo.com`;
+    const DATOS_COPIAR = `Titular: Victor Barraza
+RUT: 16847766-k
+Banco: Banco Estado
+Tipo: Cuenta Vista
+N° Cuenta: 16847766
+Correo: victor.barraza.avalos@gmail.com`;
 
     function openModal(nombreDeseo, monto) {
       document.getElementById('modalWishName').innerText = `Has elegido: ${nombreDeseo} (${monto})`;
-      const mensaje = `¡Hola! Elegí regalarles el deseo "${nombreDeseo}" para su matrimonio. ¡Muchas felicidades! ✨`;
+      const mensaje = `¡Hola Víctor y Priscilla! Elegí regalarles el deseo "${nombreDeseo}" para su matrimonio. ¡Muchas felicidades en esta nueva saga! ✨🐉`;
       const urlWhatsapp = `https://api.whatsapp.com/send?phone=${TELEFONO_WHATSAPP}&text=${encodeURIComponent(mensaje)}`;
       document.getElementById('whatsappBtn').href = urlWhatsapp;
       document.getElementById('wishModal').classList.add('active');
@@ -518,12 +608,12 @@ Correo: contacto@ejemplo.com`;
       navigator.clipboard.writeText(DATOS_COPIAR).then(() => {
         const btn = document.getElementById('copyBtn');
         btn.innerText = "✅ ¡Datos copiados al portapapeles!";
-        btn.style.backgroundColor = "#d4edda";
-        btn.style.color = "#155724";
+        btn.style.backgroundColor = "rgba(40, 167, 69, 0.4)";
+        btn.style.borderColor = "#28a745";
         setTimeout(() => {
           btn.innerText = "📋 Copiar datos bancarios";
-          btn.style.backgroundColor = "#ede6dc";
-          btn.style.color = "var(--primary-dark)";
+          btn.style.backgroundColor = "rgba(243, 198, 76, 0.15)";
+          btn.style.borderColor = "var(--gold)";
         }, 3000);
       });
     }
