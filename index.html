@@ -7,9 +7,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-space: #060913;
-      --card-bg: rgba(16, 24, 48, 0.85);
-      --card-border: rgba(212, 175, 55, 0.35);
+      --bg-space: #050711;
+      --card-bg: rgba(14, 21, 45, 0.88);
+      --card-border: rgba(212, 175, 55, 0.4);
       --gold: #f3c64c;
       --gold-light: #ffea9f;
       --gold-dark: #b8860b;
@@ -26,7 +26,7 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: radial-gradient(ellipse at top, #151d3b 0%, var(--bg-space) 70%);
+      background-color: var(--bg-space);
       color: var(--text-main);
       line-height: 1.6;
       padding-bottom: 70px;
@@ -35,26 +35,82 @@
       overflow-x: hidden;
     }
 
-    /* ESTRELLAS DE FONDO */
-    body::before {
-      content: "";
+    /* === FONDO GALÁCTICO Y NEBULOSAS === */
+    .galaxy-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -3;
+      background: 
+        radial-gradient(circle at 20% 25%, rgba(138, 43, 226, 0.32) 0%, transparent 45%),
+        radial-gradient(circle at 80% 70%, rgba(30, 144, 255, 0.28) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 60%),
+        radial-gradient(circle at 75% 15%, rgba(255, 20, 147, 0.2) 0%, transparent 40%),
+        linear-gradient(180deg, #060914 0%, #0c1127 50%, #050711 100%);
+      animation: galaxyPulse 18s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes galaxyPulse {
+      0% { transform: scale(1); filter: hue-rotate(0deg); }
+      50% { transform: scale(1.05); filter: hue-rotate(15deg); }
+      100% { transform: scale(1); filter: hue-rotate(0deg); }
+    }
+
+    /* CAPA 1 DE ESTRELLAS TITILANTES (PEQUEÑAS) */
+    .stars-layer-1 {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
       background-image: 
-        radial-gradient(1px 1px at 20px 30px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 100px 150px, #f3c64c, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 250px 80px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(2px 2px at 400px 300px, #7aa5ff, rgba(0,0,0,0)),
-        radial-gradient(1px 1px at 600px 200px, #ffffff, rgba(0,0,0,0)),
-        radial-gradient(1.5px 1.5px at 800px 450px, #f3c64c, rgba(0,0,0,0));
-      background-repeat: repeat;
-      background-size: 800px 800px;
-      opacity: 0.6;
-      z-index: -1;
+        radial-gradient(1.2px 1.2px at 30px 40px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 120px 180px, #f3c64c, rgba(0,0,0,0)),
+        radial-gradient(1.2px 1.2px at 280px 90px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.8px 1.8px at 420px 320px, #9bbaff, rgba(0,0,0,0)),
+        radial-gradient(1.2px 1.2px at 620px 220px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.5px 1.5px at 780px 470px, #ffd700, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 150px 400px, #ffffff, rgba(0,0,0,0)),
+        radial-gradient(1.6px 1.6px at 500px 100px, #ff9be3, rgba(0,0,0,0));
+      background-size: 650px 650px;
+      z-index: -2;
+      animation: twinkleOne 4s ease-in-out infinite alternate;
       pointer-events: none;
+    }
+
+    /* CAPA 2 DE ESTRELLAS TITILANTES (MEDIANAS / MÁS BRILLANTES) */
+    .stars-layer-2 {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(2px 2px at 90px 110px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2.2px 2.2px at 220px 310px, #ffe082, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 360px 180px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2.5px 2.5px at 560px 420px, #7cd4fd, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 710px 130px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2.3px 2.3px at 850px 350px, #ffd54f, rgba(0,0,0,0));
+      background-size: 800px 800px;
+      z-index: -1;
+      animation: twinkleTwo 6s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    @keyframes twinkleOne {
+      0% { opacity: 0.35; transform: translateY(0); }
+      50% { opacity: 0.95; }
+      100% { opacity: 0.45; transform: translateY(-4px); }
+    }
+
+    @keyframes twinkleTwo {
+      0% { opacity: 0.8; transform: translateY(0); }
+      50% { opacity: 0.3; }
+      100% { opacity: 1; transform: translateY(-7px); }
     }
 
     /* CONTENEDOR PRINCIPAL */
@@ -62,6 +118,8 @@
       max-width: 950px;
       margin: 0 auto;
       padding: 20px 16px;
+      position: relative;
+      z-index: 1;
     }
 
     /* PORTADA & HEADER */
@@ -70,9 +128,9 @@
       border: 1px solid var(--card-border);
       border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 25px rgba(212, 175, 55, 0.15);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 30px rgba(212, 175, 55, 0.2);
       margin-bottom: 35px;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
 
     .banner-img {
@@ -93,7 +151,7 @@
       font-weight: 800;
       color: #ffffff;
       letter-spacing: 2px;
-      text-shadow: 0 0 15px rgba(243, 198, 76, 0.4);
+      text-shadow: 0 0 18px rgba(243, 198, 76, 0.5);
       margin-bottom: 4px;
     }
 
@@ -140,13 +198,14 @@
 
     /* SECCIÓN SUBIR FOTOS */
     .photo-section {
-      background: linear-gradient(135deg, rgba(26, 38, 74, 0.9) 0%, rgba(13, 20, 42, 0.95) 100%);
+      background: linear-gradient(135deg, rgba(26, 38, 74, 0.92) 0%, rgba(13, 20, 42, 0.96) 100%);
       border: 1px dashed var(--gold);
       border-radius: 16px;
       padding: 30px 20px;
       text-align: center;
       margin-bottom: 40px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.5), 0 0 15px rgba(58, 123, 213, 0.2);
+      backdrop-filter: blur(8px);
     }
 
     .photo-icon {
@@ -199,7 +258,7 @@
       text-align: center;
       color: var(--gold);
       margin-bottom: 5px;
-      text-shadow: 0 0 10px rgba(243, 198, 76, 0.3);
+      text-shadow: 0 0 12px rgba(243, 198, 76, 0.35);
     }
 
     .section-subtitle {
@@ -218,20 +277,21 @@
     .wish-card {
       background: var(--card-bg);
       border-radius: 14px;
-      border: 1px solid rgba(212, 175, 55, 0.25);
+      border: 1px solid rgba(212, 175, 55, 0.3);
       padding: 25px 20px;
       text-align: center;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
     }
 
     .wish-card:hover {
       transform: translateY(-5px);
       border-color: var(--gold);
-      box-shadow: 0 10px 25px rgba(243, 198, 76, 0.15);
+      box-shadow: 0 10px 25px rgba(243, 198, 76, 0.25);
     }
 
     .wish-icon {
@@ -294,13 +354,13 @@
       left: 0;
       width: 100vw;
       height: 100vh;
-      background: rgba(3, 5, 12, 0.85);
+      background: rgba(3, 5, 12, 0.88);
       display: none;
       align-items: center;
       justify-content: center;
       z-index: 1000;
       padding: 20px;
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
     }
 
     .modal-overlay.active {
@@ -308,14 +368,14 @@
     }
 
     .modal-content {
-      background: #0f172a;
+      background: #0d1428;
       border: 1px solid var(--gold);
       padding: 30px 25px;
       border-radius: 16px;
       max-width: 480px;
       width: 100%;
       position: relative;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(243, 198, 76, 0.2);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.8), 0 0 25px rgba(243, 198, 76, 0.25);
       animation: modalSlide 0.3s ease;
     }
 
@@ -428,6 +488,11 @@
   </style>
 </head>
 <body>
+
+  <!-- ELEMENTOS DE FONDO CÓSMICO -->
+  <div class="galaxy-bg"></div>
+  <div class="stars-layer-1"></div>
+  <div class="stars-layer-2"></div>
 
   <div class="container">
     
