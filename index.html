@@ -270,73 +270,72 @@
       line-height: 1.5;
     }
 
-    /* === TORRE DEL RELOJ DEL SANTUARIO (SAINT SEIYA) === */
-    .sanctuary-tower-wrapper {
+    /* === RELOJ DIGITAL DEL SANTUARIO (ESTILO TEMPLO) === */
+    .sanctuary-clock-container {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: radial-gradient(circle at center, rgba(30, 20, 50, 0.9) 0%, rgba(10, 14, 30, 0.95) 100%);
+      background: radial-gradient(circle at center, rgba(35, 25, 60, 0.92) 0%, rgba(10, 14, 30, 0.98) 100%);
       border: 2px solid var(--gold);
       border-radius: 16px;
-      padding: 20px 14px;
-      box-shadow: 0 0 25px rgba(243, 198, 76, 0.25), inset 0 0 20px rgba(0,0,0,0.8);
+      padding: 24px 18px;
+      box-shadow: 0 0 25px rgba(243, 198, 76, 0.3), inset 0 0 20px rgba(0,0,0,0.8);
       position: relative;
+    }
+
+    .temple-roof {
+      font-family: 'Cinzel', serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: var(--gold-light);
+      text-transform: uppercase;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.4);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
     .tower-header-title {
       font-family: 'Cinzel', serif;
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 900;
       color: var(--gold);
       letter-spacing: 4px;
       text-transform: uppercase;
       text-shadow: 0 0 12px rgba(243, 198, 76, 0.6);
-      margin-bottom: 8px;
+      margin-bottom: 14px;
     }
 
-    .tower-image-container {
-      width: 140px;
-      height: 170px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 12px;
-      filter: drop-shadow(0 0 12px rgba(243, 198, 76, 0.4));
-    }
-
-    .tower-image-container img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-    }
-
-    /* PANTALLA DIGITAL DE LA CUENTA REGRESIVA */
+    /* PANTALLA DIGITAL */
     .countdown-display-box {
       width: 100%;
-      background: rgba(4, 7, 18, 0.9);
+      background: rgba(4, 7, 18, 0.92);
       border: 1px solid var(--gold);
       border-radius: 12px;
-      padding: 12px 10px;
+      padding: 16px 12px;
       text-align: center;
-      box-shadow: inset 0 0 15px rgba(243, 198, 76, 0.2);
+      box-shadow: inset 0 0 15px rgba(243, 198, 76, 0.25);
     }
 
     .days-counter {
       font-family: 'Cinzel', serif;
-      font-size: 1.45rem;
+      font-size: 1.6rem;
       font-weight: 800;
       color: #ffffff;
       letter-spacing: 2px;
       text-shadow: 0 0 10px rgba(243, 198, 76, 0.7);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       border-bottom: 1px solid rgba(212, 175, 55, 0.3);
-      padding-bottom: 6px;
+      padding-bottom: 8px;
     }
 
     .digital-clock-time {
       font-family: 'Orbitron', monospace;
-      font-size: 1.55rem;
+      font-size: 1.7rem;
       font-weight: 900;
       color: var(--gold);
       letter-spacing: 3px;
@@ -347,18 +346,18 @@
     .digital-clock-labels {
       display: flex;
       justify-content: space-around;
-      font-size: 0.65rem;
+      font-size: 0.68rem;
       color: var(--text-muted);
       letter-spacing: 1px;
       text-transform: uppercase;
       font-weight: 600;
-      margin-top: 3px;
+      margin-top: 5px;
     }
 
     .target-date-legend {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--gold-light);
-      margin-top: 10px;
+      margin-top: 14px;
       letter-spacing: 1px;
       font-weight: 500;
     }
@@ -578,7 +577,7 @@
         grid-template-columns: 1fr;
         padding: 25px 18px;
       }
-      .sanctuary-tower-wrapper {
+      .sanctuary-clock-container {
         max-width: 380px;
         margin: 0 auto;
         width: 100%;
@@ -613,7 +612,7 @@
 
   <div class="container">
     
-    <!-- TARJETA PRINCIPAL: PORTADA + NOMBRES + TORRE RELOJ SANTUARIO -->
+    <!-- TARJETA PRINCIPAL: PORTADA + NOMBRES + RELOJ SANTUARIO -->
     <div class="hero-card">
       <img src="portada.jpg" alt="Víctor & Priscilla" class="banner-img" onerror="this.style.display='none'">
 
@@ -639,13 +638,15 @@
           </p>
         </div>
 
-        <!-- TORRE DEL RELOJ DEL SANTUARIO CON CUENTA REGRESIVA DIGITAL -->
-        <div class="sanctuary-tower-wrapper">
-          <div class="tower-header-title">Faltan</div>
-          
-          <div class="tower-image-container">
-            <img src="torre-reloj.png" alt="Torre del Reloj del Santuario" onerror="this.src='torre-reloj.jpg'">
+        <!-- RELOJ DIGITAL DEL SANTUARIO (CUENTA REGRESIVA) -->
+        <div class="sanctuary-clock-container">
+          <div class="temple-roof">
+            <span>🏛️</span>
+            <span>Santuario • 12 Casas</span>
+            <span>🏛️</span>
           </div>
+
+          <div class="tower-header-title">Faltan</div>
 
           <div class="countdown-display-box">
             <div class="days-counter" id="cd-days-text">00 DÍAS</div>
@@ -1129,7 +1130,7 @@ Correo: victor.barraza.avalos@gmail.com`;
       });
     }
 
-    // === CUENTA REGRESIVA EXACTA: 15 DE SEPTIEMBRE DE 2026 - 12:00 PM ===
+    // === CUENTA REGRESIVA: 15 DE SEPTIEMBRE DE 2026 - 12:00 PM ===
     function updateCountdown() {
       const targetDate = new Date(2026, 8, 15, 12, 0, 0).getTime(); // Mes 8 = Septiembre
       const now = new Date().getTime();
