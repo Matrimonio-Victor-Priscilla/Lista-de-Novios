@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesa de Deseos & Recuerdos | Nuestro Matrimonio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #7a6a58;
+      --primary-dark: #5c4e3f;
+      --bg-cream: #faf8f5;
+      --card-bg: #ffffff;
+      --text-dark: #333333;
+      --text-muted: #6b6660;
+      --accent: #d4af37;
+      --border-color: #eae5de;
+      --photo-bg: #f4efe9;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-dark);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 50px 20px 30px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: var(--accent);
+      margin-bottom: 15px;
+      font-weight: 500;
+    }
+
+    .intro-text {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 600px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* CONTAINER */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.2rem;
+      text-align: center;
+      color: var(--primary-dark);
+      margin: 40px 0 10px;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+    }
+
+    /* PHOTO UPLOAD HERO BANNER */
+    .photo-section {
+      background: var(--photo-bg);
+      border: 2px dashed #d5cbbf;
+      border-radius: 20px;
+      padding: 35px 25px;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    }
+
+    .photo-icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .photo-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      color: var(--primary-dark);
+      margin-bottom: 10px;
+    }
+
+    .photo-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      max-width: 550px;
+      margin: 0 auto 20px;
+    }
+
+    .btn-upload {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--primary-dark);
+      color: #ffffff;
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 12px rgba(92, 78, 63, 0.25);
+    }
+
+    .btn-upload:hover {
+      background-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(92, 78, 63, 0.35);
+    }
+
+    /* WISHES GRID */
+    .grid-wishes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+
+    .wish-card {
+      background: var(--card-bg);
+      border-radius: 16px;
+      border: 1px solid var(--border-color);
+      padding: 30px 25px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    }
+
+    .wish-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+
+    .wish-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+    }
+
+    .wish-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .wish-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+      min-height: 45px;
+    }
+
+    .wish-amount {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 20px;
+      padding: 6px 14px;
+      background: #f4efe9;
+      border-radius: 20px;
+      display: inline-block;
+      align-self: center;
+    }
+
+    .btn-regalar {
+      background-color: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      letter-spacing: 0.5px;
+      transition: background 0.2s ease;
+      width: 100%;
+    }
+
+    .btn-regalar:hover {
+      background-color: var(--primary-dark);
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #ffffff;
+      padding: 35px 30px;
+      border-radius: 16px;
+      max-width: 480px;
+      width: 100%;
+      position: relative;
+      animation: modalSlide 0.3s ease;
+    }
+
+    @keyframes modalSlide {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 15px;
+      right: 18px;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .modal-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      color: var(--primary-dark);
+      text-align: center;
+      margin-bottom: 5px;
+    }
+
+    .modal-selected-wish {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+
+    .bank-box {
+      background: #f9f7f4;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    .bank-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .bank-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .bank-label {
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .bank-value {
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+
+    .btn-copy {
+      background-color: #ede6dc;
+      color: var(--primary-dark);
+      border: none;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 500;
+      width: 100%;
+      margin-bottom: 12px;
+      transition: background 0.2s;
+    }
+
+    .btn-copy:hover {
+      background-color: #ded3c5;
+    }
+
+    .btn-whatsapp {
+      display: block;
+      text-align: center;
+      background-color: #25d366;
+      color: #ffffff;
+      text-decoration: none;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn-whatsapp:hover {
+      background-color: #1ebd59;
+    }
+
+    .modal-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="subtitle">Celebración de Matrimonio</div>
+    <h1 class="names">Camila & Felipe</h1>
+    <p class="intro-text">
+      Gracias por acompañarnos en este día tan especial. En este espacio podrás compartir tus fotos con nosotros y elegir un deseo de nuestra mesa de regalos.
+    </p>
+  </header>
+
+  <div class="container">
+
+    <!-- SECCIÓN: SUBIR FOTOS Y VIDEOS -->
+    <div class="photo-section">
+      <div class="photo-icon">📸</div>
+      <h2 class="photo-title">Álbum Digital de Recuerdos</h2>
+      <p class="photo-desc">
+        ¡Queremos ver el matrimonio a través de tus ojos! Sube aquí todas las fotos y videos que tomes durante la celebración.
+      </p>
+      <!-- REEMPLAZA EL LINK DE ABAJO CON TU ENLACE DE DROPBOX O GOOGLE DRIVE -->
+      <a href="https://www.dropbox.com/request/TU_LINK_AQUI" target="_blank" class="btn-upload">
+        <span>Subir Fotos & Videos</span> ↗
+      </a>
+    </div>
+
+    <!-- SECCIÓN: MESA DE DESEOS -->
+    <h2 class="section-title">Mesa de Deseos</h2>
+    <p class="section-subtitle">Si deseas hacernos un regalo, puedes ayudarnos a cumplir una de estas experiencias.</p>
+
+    <div class="grid-wishes">
+      <!-- Deseo 1 -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">☕</div>
+          <h3 class="wish-title">Desayuno & Café</h3>
+          <p class="wish-desc">Para disfrutar de un café y tostadas en nuestro primer amanecer de casados.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$15.000</div>
+          <button class="btn-regalar" onclick="openModal('Desayuno & Café', '$15.000')">Regalar este deseo</button>
+        </div>
+      </div>
+
+      <!-- Deseo 2 -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🥂</div>
+          <h3 class="wish-title">Brindis al Atardecer</h3>
+          <p class="wish-desc">Un par de cócteles frente a la playa para brindar por nuestra nueva etapa.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$30.000</div>
+          <button class="btn-regalar" onclick="openModal('Brindis al Atardecer', '$30.000')">Regalar este deseo</button>
+        </div>
+      </div>
+
+      <!-- Deseo 3 -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🍕</div>
+          <h3 class="wish-title">Cena de Emergencia</h3>
+          <p class="wish-desc">Delivery salvador para los días en que a ninguno le toque cocinar.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$25.000</div>
+          <button class="btn-regalar" onclick="openModal('Cena de Emergencia', '$25.000')">Regalar este deseo</button>
+        </div>
+      </div>
+
+      <!-- Deseo 4 -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🍽️</div>
+          <h3 class="wish-title">Cena Romántica</h3>
+          <p class="wish-desc">Una velada especial con buena comida y vista inolvidable durante la luna de miel.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$60.000</div>
+          <button class="btn-regalar" onclick="openModal('Cena Romántica', '$60.000')">Regalar este deseo</button>
+        </div>
+      </div>
+
+      <!-- Deseo 5 -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">🏡</div>
+          <h3 class="wish-title">Rincón del Hogar</h3>
+          <p class="wish-desc">Un detalle decorativo o equipamiento para hacer más acogedor nuestro nido.</p>
+        </div>
+        <div>
+          <div class="wish-amount">$45.000</div>
+          <button class="btn-regalar" onclick="openModal('Rincón del Hogar', '$45.000')">Regalar este deseo</button>
+        </div>
+      </div>
+
+      <!-- Deseo 6 -->
+      <div class="wish-card">
+        <div>
+          <div class="wish-icon">✨</div>
+          <h3 class="wish-title">Deseo a Tu Gusto</h3>
+          <p class="wish-desc">Un aporte libre para sumar a nuestros sueños, ahorros y futuros proyectos.</p>
+        </div>
+        <div>
+          <div class="wish-amount">Monto Libre</div>
+          <button class="btn-regalar" onclick="openModal('Deseo a Tu Gusto', 'Monto Libre')">Regalar este deseo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL FLOTANTE -->
+  <div class="modal-overlay" id="wishModal" onclick="closeModalOnBg(event)">
+    <div class="modal-content">
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+      <h3 class="modal-title">¡Muchas Gracias!</h3>
+      <div class="modal-selected-wish" id="modalWishName">Deseo seleccionado</div>
+
+      <div class="bank-box" id="bankDetails">
+        <div class="bank-item"><span class="bank-label">Titular:</span> <span class="bank-value">Camila y Felipe</span></div>
+        <div class="bank-item"><span class="bank-label">RUT:</span> <span class="bank-value">12.345.678-9</span></div>
+        <div class="bank-item"><span class="bank-label">Banco:</span> <span class="bank-value">Banco de Chile</span></div>
+        <div class="bank-item"><span class="bank-label">Tipo de Cuenta:</span> <span class="bank-value">Cuenta Corriente</span></div>
+        <div class="bank-item"><span class="bank-label">N° de Cuenta:</span> <span class="bank-value">1234567890</span></div>
+        <div class="bank-item"><span class="bank-label">Correo:</span> <span class="bank-value">contacto@ejemplo.com</span></div>
+      </div>
+
+      <button class="btn-copy" id="copyBtn" onclick="copyBankDetails()">📋 Copiar datos bancarios</button>
+
+      <a id="whatsappBtn" href="#" target="_blank" class="btn-whatsapp">
+        💬 Enviar comprobante o mensaje por WhatsApp
+      </a>
+
+      <p class="modal-note">Al transferir, puedes indicar el nombre del deseo en el asunto.</p>
+    </div>
+  </div>
+
+  <script>
+    const TELEFONO_WHATSAPP = "56912345678";
+    
+    const DATOS_COPIAR = `Titular: Camila y Felipe
+RUT: 12.345.678-9
+Banco: Banco de Chile
+Tipo: Cuenta Corriente
+N° Cuenta: 1234567890
+Correo: contacto@ejemplo.com`;
+
+    function openModal(nombreDeseo, monto) {
+      document.getElementById('modalWishName').innerText = `Has elegido: ${nombreDeseo} (${monto})`;
+      const mensaje = `¡Hola! Elegí regalarles el deseo "${nombreDeseo}" para su matrimonio. ¡Muchas felicidades! ✨`;
+      const urlWhatsapp = `https://api.whatsapp.com/send?phone=${TELEFONO_WHATSAPP}&text=${encodeURIComponent(mensaje)}`;
+      document.getElementById('whatsappBtn').href = urlWhatsapp;
+      document.getElementById('wishModal').classList.add('active');
+    }
+
+    function closeModal() {
+      document.getElementById('wishModal').classList.remove('active');
+    }
+
+    function closeModalOnBg(e) {
+      if (e.target.id === 'wishModal') closeModal();
+    }
+
+    function copyBankDetails() {
+      navigator.clipboard.writeText(DATOS_COPIAR).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.innerText = "✅ ¡Datos copiados al portapapeles!";
+        btn.style.backgroundColor = "#d4edda";
+        btn.style.color = "#155724";
+        setTimeout(() => {
+          btn.innerText = "📋 Copiar datos bancarios";
+          btn.style.backgroundColor = "#ede6dc";
+          btn.style.color = "var(--primary-dark)";
+        }, 3000);
+      });
+    }
+  </script>
+</body>
+</html>
